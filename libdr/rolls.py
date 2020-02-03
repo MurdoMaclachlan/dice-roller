@@ -1,4 +1,6 @@
 from random import randint
+from .validate import optValidate
+from .validate import numTypeValidate
 
 def doAbilityScores():
     allResults = []
@@ -34,9 +36,10 @@ def doAbilityScores():
 def freeRoll():
     results = []
     total = 0
-    diceType = int(input("\nWhat type of dice should I roll? [4, 6, 8, 10, 12, 20, 100]: "))
-    noRoll = int(input("How many should I roll?: "))
-    for i in range(noRoll):
+    options = [4, 6, 8, 10, 12, 20, 100]
+    diceType = int(optValidate("\nWhat type of dice should I roll? [4, 6, 8, 10, 12, 20, 100]: "),options)
+    noRoll = numTypeValidate(input("How many should I roll?: "),"a number: ",True)
+    for i in range(int(noRoll)):
         results.append(randint(1,diceType))
         total += results[i]
     print("\nIndividual Results:", results)
