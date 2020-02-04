@@ -36,7 +36,7 @@ def doAbilityScores():
 def freeRoll():
     results = []
     total = 0
-    options = [4, 6, 8, 10, 12, 20, 100]
+    options = ["4", "6", "8", "10", "12", "20", "100"]
     diceType = int(optValidate("\nWhat type of dice should I roll? [4, 6, 8, 10, 12, 20, 100]: "),options)
     noRoll = numTypeValidate(input("How many should I roll?: "),"a number: ",True)
     for i in range(int(noRoll)):
